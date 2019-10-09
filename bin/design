@@ -1,0 +1,12 @@
+Class Gamee
+attributes
+    -board
+    -current_turn
+    -playerx-win-games
+    -playerO-win-games
+
+methods
+    -move game
+    -status_game (functionality)
+    -show_board
+    -reset-game
