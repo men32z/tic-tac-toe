@@ -1,9 +1,7 @@
 class Game
-  attr_accessor :board
 
   def initialize
-    @turn_x = true
-    @board = [nil]*9
+    reset_game
   end
 
   public
@@ -38,6 +36,12 @@ class Game
       board +=  (n_s.include? x+2) ? "\n---|---|---\n" : ""
     }
     board
+  end
+
+  def reset_game
+    @turn_x = true
+    @board = [nil]*9
+    @total_turns = 9
   end
 end
 

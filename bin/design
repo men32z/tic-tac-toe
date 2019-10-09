@@ -10,3 +10,4 @@ methods
     -status_game (functionality) x
     -show_board x
     -reset-game
+    -run
