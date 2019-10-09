@@ -5,4 +5,10 @@ puts "This our board"
 puts "_1_|_2_|_3_"
 puts "_4_|_5_|_6_"
 puts " 7 | 8 | 9 "
-puts "pick a number to set the first turn 'X' "
+puts "Pick a number to set the turn 'X' "
+position_x = gets.chomp
+puts "Now, your move is displayed on the board"
+puts "Pick a number to set the turn 'O' "
+position_o = gets.chomp
+puts "Now, your move is displayed on the board"
+puts "to be continued.."
