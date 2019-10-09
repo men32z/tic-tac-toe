@@ -6,7 +6,7 @@ attributes
     -playerO-win-games
 
 methods
-    -move game
-    -status_game (functionality)
-    -show_board
+    -move game x
+    -status_game (functionality) x
+    -show_board x
     -reset-game
