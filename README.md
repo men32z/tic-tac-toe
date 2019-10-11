@@ -9,25 +9,25 @@ This project consists of building the Tic Tac Toe Game. [here](https://www.theod
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
 # Game's Screenshots
-1. Welcome Screen.
+1. Welcome Screen.<br>
     In this screen you have to enter the name of the players<br>
     ![welcome screen](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Welcome.png)
-2. Board Game.
+2. Board Game.<br>
     This is the board of the game. You have to pick a number/position on the board<br>
     ![board](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Board%20Presentation.png)
-3. Turn X
+3. Turn X<br>
     Turn X is the first turn in the game. This turn is going to belong to the first player that entered his/her name.<br>
     ![turn x](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Turn%20X.png)
-4. Turn O
+4. Turn O<br>
     Turn O is the second turn in the game. This turn is going to belong to the second player that entered his/her name.<br>
     ![turn o](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Turn%20O.png)
-5. Winning Situation
+5. Winning Situation<br>
     If someone wins the game will show the following message.<br>
     ![winner](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/winning%20situation.png)
-6. Draw Situation
+6. Draw Situation<br>
     This happens when there are no free positions on the board and nobody can beat the opponent.<br>
     ![draw situation](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/draw.png)
-7. Reset Game.
+7. Reset Game.<br>
     This message will show up when the current game is over and players must decide if they want to continue playing.<br>
     ![reset game](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/reset%20game.png)
 
