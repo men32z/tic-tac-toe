@@ -10,19 +10,26 @@ This project consists of building the Tic Tac Toe Game. [here](https://www.theod
 
 # Game's Screenshots
 1. Welcome Screen.
-    In this screen you have to enter the name of the players
+    In this screen you have to enter the name of the players<br>
+    ![welcome screen](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Welcome.png)
 2. Board Game.
-    This is the board of the game. You have to pick a number/position on the board
+    This is the board of the game. You have to pick a number/position on the board<br>
+    ![board](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Board%20Presentation.png)
 3. Turn X
-    Turn X is the first turn in the game. This turn is going to belong to the first player that entered his/her name.
+    Turn X is the first turn in the game. This turn is going to belong to the first player that entered his/her name.<br>
+    ![turn x](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Turn%20X.png)
 4. Turn O
-    Turn O is the second turn in the game. This turn is going to belong to the second player that entered his/her name.
+    Turn O is the second turn in the game. This turn is going to belong to the second player that entered his/her name.<br>
+    ![turn o](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/Turn%20O.png)
 5. Winning Situation
-    If someone wins the game will show the following message.
+    If someone wins the game will show the following message.<br>
+    ![winner](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/winning%20situation.png)
 6. Draw Situation
-    This happens when there are no free positions on the board and nobody can beat the opponent.
+    This happens when there are no free positions on the board and nobody can beat the opponent.<br>
+    ![draw situation](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/draw.png)
 7. Reset Game.
-    This message will show up when the current game is over and players must decide if they want to continue playing.
+    This message will show up when the current game is over and players must decide if they want to continue playing.<br>
+    ![reset game](https://raw.githubusercontent.com/men32z/tic-tac-toe/readme_game_instructions/img/reset%20game.png)
 
 ## Built With:
 Ruby Classes, Object Oriented Programming (OOP)
