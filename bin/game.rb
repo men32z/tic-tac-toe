@@ -1,4 +1,5 @@
 class Game
+  attr_reader :total_turns
 
   def initialize
     reset_game
@@ -7,15 +8,24 @@ class Game
   public
   def move_game(position)
 
-    return puts "Position occupied with #{ @board[position-1] }" if @board[position-1] != nil
-    return puts "Position out of boundaries. Please numbers from 1 to 9" if !(position >=1 && position <= 9)
+    return "Position occupied with #{ @board[position - 1] }" if !@board[position - 1].nil?
+    return "Position out of boundaries. Please numbers from 1 to 9" if !(position >=1 && position <= 9)
 
     @board[position-1] = (@turn_x) ? 'X': 'O'
     @turn_x = !@turn_x
-    status_game(position-1)
+    @total_turns -= 1
+    winner = winner(position-1)
+    if !winner && total_turns < 1
+      return "It's a draw"
+    elsif !winner 
+      return winner
+    else
+      @total_turns = 0
+      return "The champion is #{winner}!!"
+    end
   end
 
-  def status_game(last_p)
+  def winner(last_p)
     current_value = @turn_x ? "O" : "X"
     winner_cases = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     winner_cases.each do |x|
@@ -44,14 +54,3 @@ class Game
     @total_turns = 9
   end
 end
-
-test = Game.new
-
-puts test.show_board
-puts test.move_game(15)
-test.move_game(2)
-test.move_game(6)
-test.move_game(2)
-
-print test.board
-

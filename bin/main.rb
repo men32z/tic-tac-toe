@@ -1,20 +1,25 @@
 #!/usr/bin/env ruby
+require_relative 'game'
 puts "Hello welcome to the Tic Tac Toe Game"
+puts "What is your name? (player X)"
+player_x = gets.chomp
+puts "What is your name? (player O)"
+player_o = gets.chomp
 puts "--------------------------------------"
 puts "This our board"
-puts "_1_|_2_|_3_"
-puts "_4_|_5_|_6_"
-puts " 7 | 8 | 9 "
-puts "Pick a number to set the turn 'X' "
-position_x = gets.chomp
 game = Game.new
-while (statusgame)
-    game.move_game(position)
-    statusgame = game.status_game
-end
+puts game.show_board
 
-puts "Now, your move is displayed on the board"
-puts "Pick a number to set the turn 'O' "
-position_o = gets.chomp
-puts "Now, your move is displayed on the board"
-puts "to be continued.."
+ while game.total_turns > 0
+
+  puts "Pick a number to set the turn 'X' "
+  position = gets.chomp
+  #if move is valid
+  status_game = game.move_game(position.to_i)
+  if status_game
+    puts status_game
+  end
+  puts "Now, your move is displayed on the board"
+  puts "--------------------------------------"
+  puts game.show_board
+end
