@@ -1,8 +1,13 @@
+require_relative 'user'
+
 class Game
-  attr_accessor :user
   attr_reader :total_turns
 
-  def initialize
+  def initialize(x = User.new('Player X'), o = User.new('Player O'))
+    @user = {
+      x: x,
+      o: o
+    }
     reset_game
   end
 
@@ -35,7 +40,7 @@ class Game
       return winner
     else
       @total_turns = 0
-      return "The champion is #{@user[winner.downcase.to_sym]} '#{winner}'!!"
+      return "The champion is #{@user[winner.downcase.to_sym].name} '#{winner}'!!"
     end
   end
 
@@ -63,11 +68,5 @@ class Game
     @turn_x = true
     @board = [nil]*9
     @total_turns = 9
-    if @user.nil?
-      @user = {
-        x: '',
-        o: ''
-      }
-    end
   end
 end

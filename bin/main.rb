@@ -1,22 +1,24 @@
 #!/usr/bin/env ruby
-require_relative 'game'
+require_relative '../lib/game'
+require_relative '../lib/user'
 puts "Hello welcome to the Tic Tac Toe Game"
 
-game = Game.new
-
 puts "What is your name? (player X)"
-game.user[:x] = gets.chomp
+userx = User.new
+userx.name = gets.chomp
 puts "What is your name? (player O)"
-game.user[:o] = gets.chomp
+usery = User.new(gets.chomp)
 puts "--------------------------------------"
 puts "This our board"
+
+game = Game.new(userx,usery)
 
 puts game.show_board
 flag = true
 while flag
   flag = false
   while game.total_turns > 0
-    puts "#{game.user[game.current_turn.downcase.to_sym]} pick a number to set the turn '#{game.current_turn}' "
+    puts "#{game.current_turn == 'X' ? userx.name : usery.name} pick a number to set the turn '#{game.current_turn}' "
     position = gets.chomp
     #if move is valid
     puts "--------------------------------------"
