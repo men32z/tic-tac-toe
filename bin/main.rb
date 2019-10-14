@@ -11,6 +11,7 @@ puts "_4_|_5_|_6_"
 puts " 7 | 8 | 9 "
 
 there_turns = 9
+there_is_a_winner = false
 
 while there_turns > 0
 
@@ -34,13 +35,20 @@ while there_turns > 0
   puts "_1_|_2_|_3_"
   puts "_4_|_5_|_6_"
   puts " 7 | 8 | 9 "
+
+
   #if turn is valid
-
-  #the method move_game(move) is going to return if there is a a winner or a draw
-  #puts "*************************"
-  #puts "winner is #{player_x} X!!"
-  #puts "*************************"
-
-  there_turns -= 1 if(true)
+  winner = there_is_a_winner
+  # there_is_a_winner should be a method that is going to return the winner if exist,
+  # otherwise returns false.
+  if winner
+    puts "the winner is #{winner}"
+    there_turns = 0 # if there is a winner we set the turns to 0 so the loop ends
+  elsif !winner && there_turns == 0
+    puts "its a draw"
+  else
+    #if there is no changes here the loop repeats again and we subtract one turn
+    there_turns -= 1 if(true)
+  end
 end
 
