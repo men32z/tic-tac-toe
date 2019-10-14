@@ -5,7 +5,7 @@ require_relative 'user'
 class Game
   attr_reader :total_turns
 
-  def initialize(userx = User.new('Player X'), usero = User.new('Player O'))
+  def initialize(userx = User.new('X'), usero = User.new('O'))
     @user = {
       x: userx,
       o: usero
@@ -54,14 +54,14 @@ class Game
     numbers_with_vertical_sides = [1, 4, 7]
     board = ''
     9.times do |x|
-      board += numbers_with_vertical_sides.include? x ? '|' : ''
+      board += numbers_with_vertical_sides.include?(x) ? '|' : ''
       board += if @total_turns == 9
                  " #{x + 1} "
                else
                  " #{@board[x] || ' '} "
                end
-      board += numbers_with_vertical_sides.include? x ? '|' : ''
-      board += numbers_with_vertical_sides.include? x + 2 ? "\n---|---|---\n" : ''
+      board += numbers_with_vertical_sides.include?(x) ? '|' : ''
+      board += numbers_with_vertical_sides.include?(x + 2) ? "\n---|---|---\n" : ''
     end
     board
   end
