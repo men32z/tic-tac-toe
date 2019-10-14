@@ -1,54 +1,55 @@
 #!/usr/bin/env ruby
-puts "Hello welcome to the Tic Tac Toe Game"
-puts "What is your name? (player X)"
+# frozen_string_literal: true
+
+puts 'Hello welcome to the Tic Tac Toe Game'
+puts 'What is your name? (player X)'
 player_x = gets.chomp
-puts "What is your name? (player O)"
+puts 'What is your name? (player O)'
 player_o = gets.chomp
-puts "--------------------------------------"
-puts "This our board"
-puts "_1_|_2_|_3_"
-puts "_4_|_5_|_6_"
-puts " 7 | 8 | 9 "
+puts '--------------------------------------'
+puts 'This our board'
+puts '_1_|_2_|_3_'
+puts '_4_|_5_|_6_'
+puts ' 7 | 8 | 9 '
 
 there_turns = 9
 there_is_a_winner = false
+move_game = false
 
-while there_turns > 0
+while there_turns.positive?
 
   player_turn = (there_turns % 2).zero? ? 'O' : 'X'
-  puts "Pick a valid position to set the turn player #{player_turn}"
+  name_player = (there_turns % 2).zero? ? player_o : player_x
+  puts "#{name_player}, Pick a valid position to set the turn player #{player_turn}"
   move = gets.chomp
-  #if move is valid
-  puts move ? "your move is valid" : "your move is not valid"
+  status_game = move_game
+  # Calling move_game(move) method to check if the move is valid
 
-  #status_game = move_game(move) -> Calling game logic to check if the move is valid
-  # if status_game is invalid move(out of boundaries or position occupied)
-  #   puts "ERROR your move is invalid"
-  #   the loop will start again asking the position and keeping the same turn
-  # else
-  #  puts "Nex turn"
-  #  Change the turn
-  # end
+  if status_game # status game is true when there is an error
+    puts 'ERROR your move is invalid' # We inform that there is an error and ask again for the position.
+    next # We keep the same turn,skipping the rest of the code and asking again for the position.
+  else
+    puts 'Next turn' # We let the loop continue and change the turn
+  end
 
-  puts "Now, your move is displayed on the board"
-  puts "--------------------------------------"
-  puts "_1_|_2_|_3_"
-  puts "_4_|_5_|_6_"
-  puts " 7 | 8 | 9 "
-
-
-  #if turn is valid
+  puts 'Now, your move is displayed on the board'
+  puts "Your move is #{move}"
+  puts '--------------------------------------'
+  puts '_1_|_2_|_3_'
+  puts '_4_|_5_|_6_'
+  puts ' 7 | 8 | 9 '
+  # if turn is valid
   winner = there_is_a_winner
   # there_is_a_winner should be a method that is going to return the winner if exist,
   # otherwise returns false.
   if winner
     puts "the winner is #{winner}"
     there_turns = 0 # if there is a winner we set the turns to 0 so the loop ends
-  elsif !winner && there_turns == 0
-    puts "its a draw"
+  elsif !winner && there_turns == 1
+    puts "it's a draw"
+    there_turns = 0
   else
-    #if there is no changes here the loop repeats again and we subtract one turn
-    there_turns -= 1 if(true)
+    # if there is no changes here the loop repeats again and we subtract one turn
+    there_turns -= 1
   end
 end
-
