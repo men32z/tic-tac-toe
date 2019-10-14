@@ -20,7 +20,7 @@ while flag
   while game.total_turns > 0
     puts "#{game.current_turn == 'X' ? userx.name : usery.name} pick a number to set the turn '#{game.current_turn}' "
     position = gets.chomp
-    #if move is valid
+    
     puts "--------------------------------------"
     status_game = game.move_game(position.to_i)
     if status_game
@@ -28,7 +28,7 @@ while flag
     else
       puts "Next turn"
     end
-    #Gem.win_platform? ? (system "cls") : (system "clear")
+
     puts "--------------------------------------"
     puts game.show_board
   end
