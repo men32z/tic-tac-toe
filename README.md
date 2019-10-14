@@ -8,6 +8,11 @@ This project consists of building the Tic Tac Toe Game. [here](https://www.theod
 3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
+# Installing and Running the Game
+1. The game needs a Ruby compiler in order to run. So please install Ruby following the [instructions](https://www.ruby-lang.org/en/documentation/installation/)
+2. Clone or download the repository into your machine.
+3. To run the game you have to go to the bin directory and run the command <strong>./main.rb</strong>
+
 # Game's Screenshots
 1. Welcome Screen.<br>
     In this screen you have to enter the name of the players<br>
