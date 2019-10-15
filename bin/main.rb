@@ -3,11 +3,15 @@
 
 require_relative '../lib/game'
 require_relative '../lib/user'
+
+def asking_names(turn) 
+  puts "What is your name (Turn #{turn})?"
+  name = gets.chomp
+  return name
+end
 puts 'Hello welcome to the Tic Tac Toe Game'
-userx = User.new('X')
-userx.set_name
-usery = User.new('O')
-usery.set_name
+userx = User.new('X', asking_names('X'))
+usery = User.new('O', asking_names('O'))
 puts '--------------------------------------'
 puts 'This our board'
 

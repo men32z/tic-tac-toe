@@ -29,7 +29,7 @@ class Game
 
   public
 
-  def move_game(position) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+  def move_game(position)
     return "Position occupied with #{@board[position - 1]}" unless @board[position - 1].nil?
     return 'Position out of boundaries. Please numbers from 1 to 9' unless position >= 1 && position <= 9
 
