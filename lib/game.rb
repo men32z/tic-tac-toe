@@ -29,11 +29,15 @@ class Game
 
   public
 
-  def move_game(position)
+  def invalid_position(position)
     return "Position occupied with #{@board[position - 1]}" unless @board[position - 1].nil?
     return 'Position out of boundaries. Please numbers from 1 to 9' unless position >= 1 && position <= 9
 
-    @board[position - 1] = @turn_x ? 'X' : 'O'
+    false
+  end
+
+  def move_game(position)
+    @board[position - 1] = current_turn
     @turn_x = !@turn_x
     @total_turns -= 1
     winner = winner(position - 1)

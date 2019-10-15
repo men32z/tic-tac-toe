@@ -4,10 +4,10 @@
 require_relative '../lib/game'
 require_relative '../lib/user'
 
-def asking_names(turn) 
+def asking_names(turn)
   puts "What is your name (Turn #{turn})?"
   name = gets.chomp
-  return name
+  name
 end
 puts 'Hello welcome to the Tic Tac Toe Game'
 userx = User.new('X', asking_names('X'))
@@ -25,7 +25,10 @@ while flag
     puts "#{game.current_turn == 'X' ? userx.name : usery.name} pick a number to set the turn '#{game.current_turn}' "
     position = gets.chomp
     puts '--------------------------------------'
-    status_game = game.move_game(position.to_i)
+
+    invalid_p = game.invalid_position(position.to_i)
+    status_game = invalid_p || game.move_game(position.to_i)
+
     if status_game
       puts status_game
     else
