@@ -29,7 +29,8 @@ RSpec.describe Game do
 
   describe '#winner' do
     it 'return false if there is no winner' do
-      expect(game.move_game(1)).to eq(false)
+      game.move_game(1)
+      expect(game.send(:winner, 0)).to eq(false)
     end
 
     it 'return the winner if there is one' do
@@ -83,6 +84,27 @@ RSpec.describe Game do
     it 'returns the actual turn if the turn is O' do
       game.move_game(1)
       expect(game.current_turn).to eq('O')
+    end
+  end
+
+  describe '#show_board' do
+    it 'returns the empty board with the numbers displayed to play if there is no moves' do
+      expect(game.show_board).to eq(" 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 ")
+    end
+
+    it 'returns the board with the current moves' do
+      game.move_game(1)
+      game.move_game(4)
+      expect(game.show_board).to eq(" X |   |   \n---|---|---\n O |   |   \n---|---|---\n   |   |   ")
+    end
+  end
+
+  describe '#reset_game' do
+    it 'set the initial variables for the game' do
+      game.reset_game
+      expect(game.current_turn).to eq('X')
+      expect(game.show_board).to eq(" 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 ")
+      expect(game.total_turns).to eq(9)
     end
   end
 end
