@@ -1,5 +1,5 @@
 # Collaborative Project: Tic-Tac-Toe Game
-This project consists of building the Tic Tac Toe Game. [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+This project consists of building the Tic Tac Toe Game. You can find the original project specification [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 # Rules for TIC-TAC-TOE game: 
 
